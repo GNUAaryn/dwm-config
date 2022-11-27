@@ -82,6 +82,8 @@ static const char *brdowncmd[] = { "brightnessctl", "set", "10%-", NULL };
 static const char *mutecmd[] = { "pactl", "set-sink-mute", "0", "toggle", NULL };
 static const char *volupcmd[] = { "pactl", "set-sink-volume", "0", "+5%", NULL };
 static const char *voldowncmd[] = { "pactl", "set-sink-volume", "0", "-5%", NULL };
+//screenshot
+static const char *scrshot[] = { "flameshot", "gui", NULL };
 #include "shiftview.c"
 #include <X11/XF86keysym.h>
 static char *endx[] = { "/bin/sh", "-c", "endx", "externalpipe", NULL };
@@ -91,6 +93,7 @@ static Key keys[] = {
 	{ MODKEY,	                XK_Return,      spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_d,           spawn,          {.v = rere} },
 	{ MODKEY,                       XK_f,           spawn, 		{.v = bruh} },
+	{ MODKEY,                       XK_s,           spawn,          {.v = scrshot} },
 	{ 0, XF86XK_MonBrightnessUp,    spawn,          {.v = brupcmd} },
         { 0, XF86XK_MonBrightnessDown,  spawn,          {.v = brdowncmd} },
 	{ 0, XF86XK_AudioMute,          spawn,          {.v = mutecmd } },
